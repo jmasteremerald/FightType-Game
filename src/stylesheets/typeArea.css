@@ -1,0 +1,225 @@
+:root{
+  --main-theme-color: rgb(255, 219, 39);
+}
+.type-area-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+  }
+.game-area{
+    animation: fadeUp 1.6s backwards;
+    animation-delay: 1.2s;
+    position: relative;
+    width: 80vw;
+    min-height: fit-content;
+    font-size: 2rem;
+    overflow-wrap: break-word;
+    white-space: pre-wrap; 
+  }
+  span{
+    height: 20px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: 600 ;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .wrong{
+    position: relative;
+    color: rgb(213, 89, 89);
+    opacity: 1;
+  }
+  .wrong::after{
+    display: block;
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 15px;
+    background-color: rgb(255, 121, 121);
+    bottom: -0px;
+    left: 50%;
+    translate: -50% -50%;
+    white-space: pre-wrap; 
+  }
+  .right{
+    color: rgb(227, 227, 227);
+    white-space: pre-wrap; 
+  }
+  .active-letter{
+    border-left: solid 3px var(--main-theme-color);
+    animation: Cursor 900ms infinite;
+    animation-delay : 2s
+  }
+  .start-letter{
+    animation: Cursor 900ms infinite;
+  }
+  .end-letter{
+    border-right: solid 3px var(--main-theme-color);
+  }
+  
+  h1{
+    color: var(--main-theme-color);
+  }
+  #type-to-start{
+    font-size: 3rem;
+    padding: 30px 0 30px 0;
+    margin: 0px 0px 100px 0px;
+    animation: fadeDown 1s backwards;
+    animation-delay: 1.4s;
+  }
+  .type-to-start-animation{
+    animation: startA 1200ms infinite;
+  }
+  .type-to-start-animation-not-active{
+    color: var(--main-theme-color);
+  }
+  textarea{
+    position: absolute;
+    height: 300px;
+    width: 80vw;
+    min-height: fit-content;
+    opacity: 0;
+    font-size: 1.5rem;
+    overflow-wrap: break-word;
+  }
+  #timer{
+    position: absolute;
+    left: 50%;
+    top: -60px;
+    font-size: 3rem;
+    color:rgba(250, 235, 215, 0.4)
+  }
+  .non-pointer{
+    pointer-events: none;
+  }
+  .keys{
+    height: fit-content;
+    display: inline-block;
+    background-color:rgba(70, 62, 79, 1);
+    margin: 5px;
+    padding: 3px 5px 3px 5px;
+  }
+
+  @keyframes Cursor {
+    0%{
+      border-left-color: rgba(187, 100, 12, 1);
+    }
+    50%{
+      border-left-color: rgba(187, 100, 12, 0);
+    }
+    100%{
+      border-left-color: rgba(187, 100, 12, 1);
+    }
+  } 
+
+  @keyframes startA {
+    0%{
+      color: var(--main-theme-color);
+    }
+    50%{
+      color: rgba(187, 100, 12, 0);
+    }
+    100%{
+      color: var(--main-theme-color);
+    }
+  }
+.ans{
+  animation: fadeUp 2s forwards;
+  animation-delay: .8;
+  min-height: fit-content;
+  width: 30%;
+  padding: 10px 15px 10px 15px;
+  border-radius: 8px;
+  background-color: rgb(63, 57, 70);
+  font-size: 22px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+#ans-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div-text{
+  margin: 10px 0 10px 0;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 600 ;
+  color: rgba(255, 255, 255, 0.4);
+  word-wrap: break-word;
+}
+
+  
+@keyframes fadeUp{
+  0%{
+      translate: 0 80px;
+      opacity: 0;
+  }
+  100%{
+      translate: 0 0 ;
+      opacity: 1;
+  }
+}
+@keyframes fadeUpLess{
+  0%{
+      translate: 0 20px;
+      opacity: 0;
+  }
+  100%{
+      translate: 0 0 ;
+      opacity: 1;
+  }
+}
+@keyframes fadeDown{
+  0%{
+      translate: 0 -50px;
+      opacity: 0;
+  }
+  100%{
+      translate: 0 0 ;
+      opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  /* chrome  and oricle*/
+  @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+     .wrong {
+      white-space: break-spaces;
+     } 
+    }
+  @media only screen and (device-width: 390px){
+    #type-to-start{
+      font-size: 2rem;
+      margin: 0px 0px 10px 0px;
+    }
+    .ans{
+      width: 80%;
+    }
+    #ans-wrapper{
+      flex-direction: column
+    }
+    .div-text{
+      font-size: .7rem;
+    }
+
+    #type-to-start{
+      font-size: 2rem;
+      margin: 100px 0px 100px 0px;
+      display: block;
+    }
+    .game-area{
+      font-size: 1rem;
+    }
+  }
+  
